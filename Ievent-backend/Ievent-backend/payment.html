@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="pay.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">A remplir au nom du possesseur du ticket</h3>
+
+                <div class="inputBox">
+                    <span>nom et Prénom :</span>
+                    <input type="text" placeholder="Mechri Fadi" required="required">
+                </div>
+                <div class="inputBox">
+                    <span>Numéro de la Carte d'identité:</span>
+                    <input type="numéro carte d'identité" placeholder="123456789" required="required">
+                </div>
+                <div class="inputBox">
+                    <span>Adresse :</span>
+                    <input type="text" placeholder="45 avenue des etats unis" required="required">
+                </div>
+                <div class="inputBox">
+                    <span>Ville :</span>
+                    <input type="text" placeholder="Paris" required="required">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Pays :</span>
+                        <input type="text" placeholder="France" required="required">
+                    </div>
+                    <div class="inputBox">
+                        <span>Code Postal :</span>
+                        <input type="text" placeholder="75000" required="required">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">Paiement</h3>
+
+                <div class="inputBox">
+                    <span>Carte accepté :</span>
+                    <img src="assets/images/card_img.png" >
+                </div>
+                <div class="inputBox">
+                    <span>Nom de la carte :</span>
+                    <input type="text" placeholder="mr. Mechri Fadi" required="required">
+                </div>
+                <div class="inputBox">
+                    <span>Numéro de la carte de crédit :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444" required="required">
+                </div>
+                <div class="inputBox">
+                    <span>Mois d'expiration :</span>
+                    <input type="text" placeholder="janvier" required="required">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Année d'expiration :</span>
+                        <input type="number" placeholder="2022" required="required">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="text" placeholder="123"required="required">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <input type="submit" value="Valider" class="submit-btn" onclick="redirect_Page(this)" >
+
+    </form>
+
+</div>
+</body>
+<script>
+    function redirect_Page (ele) {
+	    ele.value = 'Vous serez rediriger vers une page après validation de votre paiement ...';
+        ele.disabled = true;
+        var tID = setTimeout(function () {
+            window.location.href = 'Pay.html';
+            window.clearTimeout(tID);		// clear time out.
+        }, 2000);
+    }
+</script>
+</html>

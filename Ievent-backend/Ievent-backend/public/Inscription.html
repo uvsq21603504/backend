@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<link rel="stylesheet" href="Register.css">
+</head>
+<body>
+	<form id="myForm" action="/user_create" onsubmit="return Validate()" method="POST">
+	<div class="container">
+		<div class="registerbox">
+     <form action="/user_create" method="POST">
+      <input type="text" name="fname" placeholder="Enter First Name" required>
+			<input type="text" name="lname" placeholder="Enter Last Name" required>
+			<input type="text" name="email" placeholder="Enter Email ID"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required>
+			<input type="password" id="txtPassword" name="pass1" placeholder="Enter Password" required>
+			<input type="password" id="txtConfirmPassword" name="pass2" placeholder="Retype Password" required>
+			<input type="submit" id="btnSubmit" value="Submit" onsubmit="return Validate()" />
+
+    </form>
+
+
+
+    </div>
+
+	<script type="text/javascript">
+		function Validate() {
+			var password = document.getElementById("txtPassword").value;
+			var confirmPassword = document.getElementById("txtConfirmPassword").value;
+			if (password != confirmPassword) {
+				alert("Passwords do not match.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+   
+  </body>
+</html>
